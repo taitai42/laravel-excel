@@ -7,13 +7,13 @@ class ExporterTest extends TestCase
 {
     const FILE = __DIR__.'/../docs/test.xlsx';
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         (new Migration)->up();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         (new Migration)->down();
         parent::tearDown();
@@ -50,7 +50,7 @@ class ExporterTest extends TestCase
         $this->seed($itemsToSeed);
 
         //Export the file
-        $exporter = $this->app->make('cyber-duck/exporter')->make('openoffice');
+        $exporter = $this->app->make('cyber-duck/exporter')->make('openOffice');
         $exporter->load(Item::all())->save(self::FILE);
 
         //Read the content

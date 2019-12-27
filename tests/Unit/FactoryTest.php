@@ -22,7 +22,7 @@ class ImporterFactoryTest extends TestCase
     public function test_factory_can_create_odt()
     {
         $factory = new ImporterFactory();
-        $spreadsheet = $factory->make('openoffice');
+        $spreadsheet = $factory->make('openOffice');
         $this->assertInstanceOf(
             \Cyberduck\LaravelExcel\Importer\OpenOffice::class,
             $factory->make('openoffice')
@@ -63,7 +63,7 @@ class ImporterFactoryTest extends TestCase
     public function test_exporter_factory_can_create_odt()
     {
         $factory = new ExporterFactory();
-        $spreadsheet = $factory->make('openoffice');
+        $spreadsheet = $factory->make('openOffice');
         $this->assertInstanceOf(
             \Cyberduck\LaravelExcel\Exporter\OpenOffice::class,
             $spreadsheet
